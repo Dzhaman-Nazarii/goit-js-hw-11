@@ -88,9 +88,10 @@ function addImages(response) {
 }
 
 function onPagination(entries, observer) {
-  page += 1;
   entries.forEach(entry => {
+    console.log(entry);
     if (entry.isIntersecting) {
+      page += 1;
       addGalleryPag();
       if (page === totalPages) {
         observer.unobserve(guard);
